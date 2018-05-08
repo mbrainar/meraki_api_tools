@@ -1,5 +1,6 @@
 import requests
 from argparse import ArgumentParser
+from utils import get_org_id
 
 # Get the list of networks in the organization
 def get_networks(api_key, organization_id):
@@ -12,20 +13,6 @@ def get_networks(api_key, organization_id):
     response = requests.request("GET", url, headers=headers)
 
     return response.json()
-
-# Get the organization id from the provided name
-def get_org_id(api_key, organization_name):
-    url = "https://api.meraki.com/api/v0/organizations"
-    headers = {
-        'x-cisco-meraki-api-key': api_key,
-        'Cache-Control': "no-cache",
-        'Postman-Token': "e3315dd1-45a9-4250-ab05-2a24769296ed"
-        }
-    response = requests.request("GET", url, headers=headers)
-
-    for org in response.json():
-        if org['name'] == organization_name:
-            return org['id']
 
 # Get list of devices for a given network id
 def get_devices(api_key, network_id):
