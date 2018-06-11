@@ -9,3 +9,12 @@ Extras:
 
 * [utils.py](utils.py) = common functions across tools
 * [create_file_template.csv](create_file_template.csv) = template for create_network import file
+
+
+# TODO
+
+* top applications for guest
+* time spent on guest
+* bandwidth spent on guest
+* get VLANs for network (save to CSV)
+* put VLANS into network (from CSV)
