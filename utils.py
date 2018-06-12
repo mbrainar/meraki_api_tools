@@ -23,9 +23,13 @@ def get_network_id(api_key, organization_id, network_name):
         if network['name'] == network_name:
             return network['id']
 
-def get_template_id(api_key, organization_id):
+def get_template_id(api_key, organization_id, template_name):
     url = "https://api.meraki.com/api/v0/organizations/{}/configTemplates".format(organization_id)
     headers = {
     'x-cisco-meraki-api-key': api_key
     }
     response = requests.request("GET", url, headers=headers)
+
+    for template in response.json():
+        if template['name'] == template_name:
+            return template['id']
