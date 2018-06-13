@@ -15,9 +15,17 @@ Collection of python-based Meraki API tools
 
 3. Automate template change and VLAN readdressing
 
+  Example usage:
+  ```
+  export MERAKI_API_KEY=REDACTED
+  python get_vlans.py -o "ACME Corp" -n "Branch 0018" -f "Branch 0018 VLANS.txt"
+  python change_template.py -o "ACME Corp" -n "Branch 0018" -t "New Branch Template"
+  python put_vlans.py -o "ACME Corp" -n "Branch 0018" -f "Branch 0018 VLANS.txt"
+  ```
+
   * [get_vlans.py](get_vlans.py) = get list of vlan information from provided network
-  * [put_vlans.py](put_vlans.py) = take JSON input (from get_vlans.py) and modify networks
   * [change_template.py](change_template.py) = unbind network from template, then bind to new template provided
+  * [put_vlans.py](put_vlans.py) = take JSON input (from get_vlans.py) and modify networks
 
 
 Extras:
