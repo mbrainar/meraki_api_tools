@@ -15,7 +15,7 @@ def get_org_id(api_key, organization_name):
 def get_network_id(api_key, organization_id, network_name):
     url = "https://api.meraki.com/api/v0/organizations/{}/networks".format(organization_id)
     headers = {
-    'x-cisco-meraki-api-key': api_key
+        'x-cisco-meraki-api-key': api_key
     }
     response = requests.request("GET", url, headers=headers)
 
@@ -26,7 +26,7 @@ def get_network_id(api_key, organization_id, network_name):
 def get_template_id(api_key, organization_id, template_name):
     url = "https://api.meraki.com/api/v0/organizations/{}/configTemplates".format(organization_id)
     headers = {
-    'x-cisco-meraki-api-key': api_key
+        'x-cisco-meraki-api-key': api_key
     }
     response = requests.request("GET", url, headers=headers)
 
